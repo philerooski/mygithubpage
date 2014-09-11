@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css'/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src='script.js'></script>
+    </head>
+    <body onload="init();">
+        <div id = 'body-wrap'>
+            <div id = 'canvas-container'>
+                <canvas id='canvas' width=500px height=500px></canvas>
+                <div id='refresh' data-state='clicked'>
+                </div>
+            </div>
+            <div id = 'settings'>
+                <div id='var-wrap'>
+                    <div id='var-wrap-left'>
+                        <div class='variables'>
+                            <p class='q'>q</p>
+                            <p class='w'>w</p>
+                            <p class='e'>e</p>
+                            <p class='r'>r</p>
+                            <p class='f'>f</p>
+                            <p class='g'>g</p>
+                        </div>
+                        <div class='equals'>
+                            <p class='q'>=</p>
+                            <p class='w'>=</p>
+                            <p class='e'>=</p>
+                            <p class='r'>=</p>
+                            <p class='f'>=</p>
+                            <p class='g'>=</p>
+                        </div>
+                        <div class='variable-values'>
+                            <p id='q' class='variableValue q'></p>
+                            <p id='w' class='variableValue w'></p>
+                            <p id='e' class='variableValue e'></p>
+                            <p id='r' class='variableValue r'></p>
+                            <p id='f' class='variableValue f'></p>
+                            <p id='g' class='variableValue g'></p>
+                        </div>
+                    </div>
+                    <div id='var-wrap-right'>
+                        <div class='variables'>
+                            <p class='a'>a</p>
+                            <p class='dt'>dt</p>
+                        </div>
+                        <div class='equals'>
+                            <p class='a'>=</p>
+                            <p class='dt'>=</p>
+                        </div>
+                        <div class='variable-values'>
+                            <p id='a' class='variableValue a'></p>
+                            <p id='dt' class='variableValue dt'></p>
+                        </div>
+                        <div id='stretch'>
+                            <p>width stretch:</p>
+                            <p>height stretch:</p>
+                            <p>size: <span id='size' class='variableValue'></span></p>
+                        </div>
+                        <div id='stretch-increment'>
+                            <p><a class='increment wstretch'>-</a><a class='increment wstretch'>+</a></p>
+                            <p><a class='increment hstretch'>-</a><a class='increment hstretch'>+</a></p>
+                        </div>
+                        <div id='drawInstantly'><label for='di'>draw instantly</label>
+                            <input id='di' type='checkbox' name='di' checked='unchecked'>
+                        </div>
+                        <div id='danger'>(!) dt > 0.001 (!)</div>
+                        <div id='reset'>reset</div>
+                    </div>
+                </div>
+                <div id='current-equation'>
+                    <div id='header-current-equation'>
+                        <h3>Current Equation</h3>
+                        <a id='toggle1' class='toggle'>1</a>
+                        <a id='toggle2' class='toggle'>2</a>
+                        <a id='toggle3' class='toggle'>3</a>
+                    </div>
+                    <div id='body-current-equation'>
+                    </div>
+                </div>
+            </div>
+            <div id='cc'>
+                <img src="http://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+            </div>
+            <div id='help'>
+                <p>Hold down key to change the variable</p>
+                <img src='keyboard.png'>
+            </div>
+            <div id='info'>
+                <img src='f(art).png'>
+            </div>
+        </div>
+    </body>
+</html>
