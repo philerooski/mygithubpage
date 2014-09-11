@@ -1,0 +1,230 @@
+canvas {
+  background-color: black;
+  position: absolute;
+  z-index: -1;
+}
+
+body {
+  background-color: #f5fffa;
+  cursor: default;
+  font-family: 'Heiti TC', Futura, Helvetica, sans-serif;
+  /*-webkit-touch-callout: none;*/
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#canvas-container {
+  width: 500px;
+  height: 500px;
+  float: left;
+  display: inline;
+  margin-right: 10px;
+  border: 1px solid pink;
+}
+
+#settings {
+  font-size: 2em;
+  display: inline-block;
+}
+
+#refresh {
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+#body-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.variables {
+  float: left;
+  text-align: center;
+}
+
+.equals {
+  float: left;
+  margin-left: 10px;
+}
+
+.variable-values {
+  float: left;
+  margin-left:10px;
+}
+
+#var-wrap {
+  display:inline-block;
+}
+
+#var-wrap-left {
+  display: inline;
+  background-color: #ffb33f;
+  border-radius: 20px;
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+#var-wrap-right {
+  display: inline;
+  float:left;
+  background-color: #29FF86;
+  border-radius: 20px;
+  width: 230px;
+  padding: 10px;
+}
+
+#stretch {
+  display: inline;
+  font-size: 22px;
+  float: left;
+}
+
+#stretch-increment {
+  float: left;
+}
+
+#stretch-increment p {
+  margin: 8px 0px;
+}
+
+#size {
+  display: inline;
+}
+
+#current-equation {
+  font-size: 18px;
+  background-color: #1FE5FF;
+  border-radius: 20px;
+  padding: 1px 10px;
+  width: 403px;
+}
+
+#header-current-equation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  display: inline;
+}
+
+.toggle {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background: grey;
+  line-height: 18px;
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 7px;
+}
+
+.increment {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  border: 2px solid black;
+  border-radius: 7px;
+  line-height: 24px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.increment:hover {
+  border: 2px solid white;
+  color: white;
+}
+
+#drawInstantly {
+  font-weight: 900;
+  font-style: italic;
+  float: left;
+  font-size: 20px;
+  width:200px;
+  float: left;
+}
+
+#danger {
+  font-size: 12px;
+  float:left;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+
+#reset {
+  font-size: 14px;
+  float: right;
+  margin-top: 20px;
+  color: blue;
+}
+
+#reset:hover {
+  text-decoration: underline;
+}
+
+#info {
+  display: inline-block;
+  position: fixed;
+  bottom: 0px;
+  right: 5px;
+  cursor: pointer;
+}
+
+
+
+#cc {
+  display: none;
+  position: fixed;
+  left:725px;
+  bottom: 0px;
+}
+
+#help {
+  display: none;
+  position: fixed;
+  border-radius: 20px;
+  left: 850px;
+  bottom: 0px;
+  background: #f5fffa;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background: white;
+}
+
+#refresh[data-state=notclicked]
+{
+background-image:url('play_small.png');
+cursor:pointer;
+}
+#refresh[data-state=notclicked]:hover
+{
+background-image:url('play_small_hover.png');
+cursor:pointer;
+}
+#refresh[data-state=clicked]
+{
+background-image:url('refresh_small.png');
+cursor:pointer;
+}
+#refresh[data-state=clicked]:hover
+{
+background-image:url('refresh_small_hover.png');
+cursor:pointer;
+}
