@@ -5,10 +5,31 @@
 }
 
 header {
-    padding: 30px;
-    font-family: fantasy;
-    font-size: xx-large;
+    padding-top: 30px;
+}
+
+header, #composer {
     text-align: center;
+}
+
+audio {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+#title {
+    font-size: xx-large;
+    margin-bottom: -10px;
+}
+
+.title {
+    font-family: fantasy;
+}
+
+#composer {
+    padding: 20px 0px;
+    font-weight: bold;
 }
 
 #summarycontainer {
@@ -28,6 +49,14 @@ header {
     text-align: center;
     margin-top: 100px;
     font-size: large;
+}
+
+tspan {
+    font-family: "Lucida Calligraphy", cursive;
+}
+
+#processing {
+    display: none;
 }
 
 strong {
