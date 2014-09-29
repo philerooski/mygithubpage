@@ -7,7 +7,7 @@ var KEY_SIGNATURE = "Cm";
 var TITLE = "Pr&eacute;lude";
 var SUBTITLE = "Op. 28, No. 20";
 var COMPOSER = "Fr&eacute;d&eacute;ric Chopin";
-var SUMMARY = "This is an awesome piece.";
+var SUMMARY = "Commonly called the \"Chord Prelude\" (or \"Funeral March\" by <a data-wiki='Hans_von_B&uuml;low'>Hans von B&uuml;low</a>), <a data-wiki='Fr&eacute;d&eacute;ric_Chopin'>Chopin</a>'s Prelude in C minor is one of the most famous and well-recognized of his preludes. While seemingly simple on the surface, the actual harmonic construction of the piece is quite complex. <a data-wiki='Sergei_Rachmaninoff'>Sergei Rachmaninoff</a> took advantage of this complexity when composing his <a href='http://youtu.be/8kaEUWZyB2Y' target='_blank'>Variatons on a Theme of Chopin</a>, a beautiful, yet incredibly technically demanding piece based on this prelude.";
 var TEMPO = "Largo";
 var FORM = "ABB (binary)";
 var beamGroups = null;
@@ -35,14 +35,28 @@ var treble = {
     voice().addTickables(
             [
             new vf.GhostNote("2"),
-            note(["g/3", "bn/3"], "4").setStemDirection(-1),
+            note(["g/3", "bn/3"], "4", "treble", -1),
             new vf.GhostNote("4")
             ] 
             ),
     voice().addTickables([
-            new vf.TextNote({
-                glyph: "f", duration: "1"
+            new vf.TextDynamics({
+                text: "ff", duration: "1"
             }).setLine(12)
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "iv", duration: "4", superscript: "7"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "7"
+            }),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            })
             ])
         ],
     m1: [
@@ -61,7 +75,21 @@ var treble = {
             note(["db/3", "e/3", "g/3"], "4", "bass", -1),
             new vf.GhostNote("4")
             ]
-            )
+            ),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "I", duration: "4", subscript: "VI"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "IV", duration: "4", subscript: "VI"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "V", duration: "4", subscript: "VI", superscript: "7"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "I", duration: "4", subscript: "VI"
+            }).setLine(10)
+            ])
         ],
     m2: [
         voice().addTickables(
@@ -79,7 +107,21 @@ var treble = {
             note(["a/3", "c/4"], "4", "bass", -1),
             new vf.GhostNote("4")
             ]
-            )
+            ),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "7"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "V7/iv", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "iv", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(10)
+            ])
         ],
     m3: [
         voice().addTickables(
@@ -97,14 +139,28 @@ var treble = {
             note(["c/4", "d/4", "f#/4"], "4", "treble", -1),
             new vf.GhostNote("4")
             ] 
-            )
+            ),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "V7/V", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V7/5", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4"
+            })
+            ])
         ],
     m4: [
         voice().addTickables([
                 note(["e/4", "g/4", "e/5"], "4"),
                 note(["e/4", "a/4", "e/5"], "4"),
                 note(["d/4", "d/5"], "4"),
-                note(["d/4", "a/4", "d/5"], "4")
+                note(["d/4", "g/4", "d/5"], "4")
                 ]),
     voice().addTickables([
             new vf.GhostNote("2"),    
@@ -113,9 +169,23 @@ var treble = {
             new vf.GhostNote("4")
             ]),
     voice().addTickables([
-            new vf.TextNote({
-                glyph: "p", duration: "1"
+            new vf.TextDynamics({
+                text: "p", duration: "1"
             }).setLine(11)
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "VI", duration: "4", superscript: "6"
+            }),
+            new vf.TextNote({
+                text: "vii", duration: "4", superscript: vf.unicode["degrees"] + "7"
+            }),
+            new vf.TextNote({
+                text: "v", duration: "4", superscript: "6"
+            })
             ])
         ],
     m5: [
@@ -123,9 +193,23 @@ var treble = {
                 note(["c/4", "g/4", "c/5"], "4"),
                 note(["c/4", "d/4", "f#/4", "d/5"], "4"),
                 note(["d/4", "g/4", "bn/4"], "8d"),
-                note(["c/4", "a/4"], "16"),
+                note(["c/4", "an/4"], "16"),
                 note(["bn/3", "d/4", "g/4"], "4")
-                ])
+                ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: vf.unicode["sharp"] + "vi", duration: "4", superscript: vf.unicode["o-with-slash"] + "7"
+            }),
+            new vf.TextNote({
+                text: "Fr+6", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "4", subscript: "2"
+            })
+            ])
         ],
     m6: [
         voice().addTickables([
@@ -139,6 +223,20 @@ var treble = {
             new vf.GhostNote("2"),
             note(["g/3", "d/4"], "4", "treble", -1),
             new vf.GhostNote("4")
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "iv", duration: "4"
+            }),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "6", subscript: "5"
+            }),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            })
             ])
         ],
     m7: [
@@ -153,6 +251,20 @@ var treble = {
             new vf.GhostNote("2"),
             note(["f/3", "g/3", "bn/3"], "4", "bass", -1),
             new vf.GhostNote("4")
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "VI", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "N", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "7"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(10)
             ])
         ],
     m8: [
@@ -160,13 +272,32 @@ var treble = {
                 note(["e/4", "g/4", "e/5"], "4").addAnnotation(2, new vf.Annotation("(a tempo)")),
                 note(["e/4", "a/4", "e/5"], "4"),
                 note(["d/4", "d/5"], "4"),
-                note(["d/4", "a/4", "d/5"], "4"),
+                note(["d/4", "g/4", "d/5"], "4"),
                 ]),
     voice().addTickables([
             new vf.GhostNote("2"),    
             note(["a/4"], "8d"),
             note(["f#/4"], "16"),
             new vf.GhostNote("4")
+            ]),
+    voice().addTickables([
+            new vf.TextDynamics({
+                text: "pp", duration: "1"
+            }).setLine(11)
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "VI", duration: "4", superscript: "6"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "vii", duration: "4", superscript: vf.unicode["degrees"] + "7"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "v", duration: "4", superscript: "6"
+            }).setLine(-2)
             ])
         ],
     m9: [
@@ -174,9 +305,23 @@ var treble = {
                 note(["c/4", "g/4", "c/5"], "4"),
                 note(["c/4", "d/4", "f#/4", "d/5"], "4"),
                 note(["d/4", "g/4", "bn/4"], "8d"),
-                note(["c/4", "a/4"], "16"),
+                note(["c/4", "an/4"], "16"),
                 note(["bn/3", "d/4", "g/4"], "4")
-                ])
+                ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: vf.unicode["sharp"] + "vi", duration: "4", superscript: vf.unicode["o-with-slash"] + "7"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "Fr+6", duration: "4"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "V", duration: "4"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "4", subscript: "2"
+            }).setLine(-2)
+            ])
         ],
     m10: [
         voice().addTickables([
@@ -190,6 +335,20 @@ var treble = {
             new vf.GhostNote("2"),
             note(["g/3", "d/4"], "4", "treble", -1),
             new vf.GhostNote("4")
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "iv", duration: "4"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "6", subscript: "5"
+            }).setLine(-2),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(-2)
             ])
         ],
     m11: [
@@ -204,16 +363,36 @@ var treble = {
             new vf.GhostNote("2"),
             note(["f/3", "g/3", "bn/3"], "4", "bass", -1),
             new vf.GhostNote("4")
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "VI", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "N", duration: "4"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "V", duration: "4", superscript: "7"
+            }).setLine(10),
+            new vf.TextNote({
+                text: "i", duration: "4"
+            }).setLine(10)
             ])
         ],
     m12: [
         voice().addTickables([
-                note(["c/4", "e/4", "g/4", "c/5"], "1")
+                note(["c/4", "e/4", "g/4", "c/5"], "1").addModifier(0, new vf.Articulation("a@a").setPosition(vf.Modifier.Position.ABOVE))
+                .addModifier(0, new vf.Articulation("a>").setYShift(-15))
                 ]),
     voice().addTickables([
-            new vf.TextNote({
-                glyph: "p", duration: "1"
+            new vf.TextDynamics({
+                text: "p", duration: "1"
             }).setLine(11)
+            ]),
+    voice().addTickables([
+            new vf.TextNote({
+                text: "i", duration: "1"
+            })
             ])
         ]
 }
@@ -333,7 +512,7 @@ var bass = {
         ],
     m12: [
         voice().addTickables([
-                note(["c/3", "g/3"], "1", "bass")
+                note(["c/3", "g/3"], "1", "bass").addModifier(0, new vf.Articulation("a@a").setPosition(vf.Modifier.Position.ABOVE))
                 ])
         ]
 }
